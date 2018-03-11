@@ -1,2 +1,2 @@
 # JSCode
-URL Github Pages: http://pmourey.github.io/JSCode
+URL Github Pages: https://pmourey.github.io/JSCode
