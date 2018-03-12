@@ -11,10 +11,10 @@ console.log("Bienvenue dans ce jeu de devinette !");
 var solution = Math.floor(Math.random() * 100) + 1;
 
 // Décommentez temporairement cette ligne pour mieux vérifier le programme
-//console.log("(La solution est " + solution + ")");
+console.log("(La solution est " + solution + ")");
 
 var nombreEssais = 6;
-var numEssai = 0;
+var numEssai = 1;
 var trouve = false;
 var nombreSaisi;
 var saisieValide = false;
@@ -27,18 +27,21 @@ while (numEssai <= nombreEssais && !trouve) {
         if (!saisieValide)
             console.log("Saisie incorrecte!");
     }
-    numEssai += 1;
     saisieValide = false;
-    if (nombreSaisi < solution)
+    if (nombreSaisi < solution) {
         console.log(nombreSaisi + " trop petit");
-    else if (nombreSaisi > solution)
+        numEssai++;
+    }
+    else if (nombreSaisi > solution) {
         console.log(nombreSaisi + " trop grand");
+        numEssai++;
+    }
     else
         trouve = true;
 }
 
 
-if (numEssai < nombreEssais && trouve ) {
+if (numEssai <= nombreEssais && trouve ) {
     console.log("Bravo ! La solution était " + solution);
     console.log("Vous avez trouvé en " + numEssai + " essai(s)");
 }
